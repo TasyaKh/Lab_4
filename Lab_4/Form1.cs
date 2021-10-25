@@ -21,45 +21,59 @@ namespace Lab_4
 
             foreach (var tech in this.techList)
             {
-                if(tech is Laptop)
+                if (tech is Laptop)
                 {
                     laptopCount++;
                 }
-                else if(tech is Tablet)
+                else if (tech is Tablet)
                 {
                     tabletCount++;
                 }
-                else if(tech is Phone)
+                else if (tech is Phone)
                 {
                     phoneCount++;
                 }
             }
             txtInfo.Text = "Ноутбук   Планшет   Телефон";
-            txtInfo.Text +="\n";
+            txtInfo.Text += "\n";
             txtInfo.Text += String.Format("{0}\t  {1}\t     {2}", laptopCount, tabletCount, phoneCount);
         }
 
         private void Refill_Click(object sender, EventArgs e)
         {
-           techList.Clear();
+            techList.Clear();
 
-           var rnd = new Random();
+            var rnd = new Random();
 
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 switch (rnd.Next() % 3)
                 {
                     case 0:
-                        techList.Add(new Laptop());
+                        this.techList.Add(new Laptop());
                         break;
                     case 1:
-                        techList.Add(new Tablet());
+                        this.techList.Add(new Tablet());
                         break;
                     case 2:
-                        techList.Add(new Phone());
+                        this.techList.Add(new Phone());
                         break;
                 }
             }
+            showInfo();
+        }
+
+        private void buttonGet_Click(object sender, EventArgs e)
+        {
+            if(techList.Count == 0)
+            {
+                txtOut.Text = "Денег нет!";
+                return;
+            }
+            Technique tech = this.techList[0];
+
+            txtOut.Text = tech.getInfo();
+            this.techList.RemoveAt(0);
             showInfo();
         }
     }

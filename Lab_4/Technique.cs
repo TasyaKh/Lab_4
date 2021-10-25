@@ -8,12 +8,12 @@ namespace Lab_4
             private String sizeOfDispl = "0";
             protected void sizeOfDisplay(int minSize,int maxSize)
             {
-                double result = (double)rnd.Next() % (maxSize - minSize) + minSize + 1;
+                double result = rnd.NextDouble() % (maxSize - minSize) + minSize + 1;
                 sizeOfDispl = String.Format("{0:f1}",result);
             }
             public virtual String getInfo()
             {
-                var str = "\nРазмер экрана: " + sizeOfDispl;
+                var str = "\nРазмер экрана: " + sizeOfDispl + " дюйм";
                 return str;
             }
             public virtual String deviceType()

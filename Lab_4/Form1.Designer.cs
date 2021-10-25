@@ -44,6 +44,7 @@ namespace Lab_4
             this.buttonGet.TabIndex = 0;
             this.buttonGet.Text = "Получить";
             this.buttonGet.UseVisualStyleBackColor = true;
+            this.buttonGet.Click += new System.EventHandler(this.buttonGet_Click);
             // 
             // button2
             // 

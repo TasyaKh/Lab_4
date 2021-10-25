@@ -25,7 +25,7 @@ namespace Lab_4
             str += base.getInfo();
             str += String.Format("\nПодсветка на клавиатуре: " + backlightKeyboard);
             str += String.Format("\nЧисло ядер: " + numberCores);
-            str += String.Format("\nОбъем жесткого диска: " + spaceHardDrive);
+            str += String.Format("\nОбъем жесткого диска: " + spaceHardDrive + " гб.");
 
             return str;
         }

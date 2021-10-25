@@ -25,7 +25,7 @@ namespace Lab_4
             str += base.getInfo();
             str += String.Format("\nЧисло слотов для Sim: " + numSim);
             str += String.Format("\nКол-во мегапикселей у камеры: " + cameraMegapixels);
-            str += String.Format("\nБатарея (мАч): " + battery);
+            str += String.Format("\nБатарея: " + battery + " мАч");
 
             return str;
         }
