@@ -2,7 +2,7 @@
 
 namespace Lab_4
 {
-    class Tablet : Technique        //Класс для планшетов, наследует класс техника
+    public class Tablet : Technique        //Класс для планшетов, наследует класс техника
     {
         private bool camera;        //Наличие камеры
         private int dpiScreen;      //dpi экрана
@@ -22,6 +22,10 @@ namespace Lab_4
             str += String.Format("\nDPI экрана: " + dpiScreen);  //Получить dpi экрана
 
             return str;                                          //Вывести полученные данные об устройстве
+        }
+         public int getDpiScreen()
+        {
+            return dpiScreen;
         }
     }
 }

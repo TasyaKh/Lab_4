@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab_4
 {
-    class Phone : Technique                 //Класс Телефонов, наследует класс техника
+    public class Phone : Technique                 //Класс Телефонов, наследует класс техника
     {
         private byte numSim;                //Количество слотов для сим
         private int cameraMegapixels;       //Количество мегапикселей для камеры
@@ -28,6 +24,18 @@ namespace Lab_4
             str += String.Format("\nБатарея: " + battery + " мАч");
 
             return str;
+        }
+        public byte getNumSim()
+        {
+            return numSim;
+        }
+        public int getCameraMegapixels()
+        {
+            return cameraMegapixels;
+        }
+        public int getBattery()
+        {
+            return battery;
         }
     }
 }

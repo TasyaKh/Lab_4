@@ -44,7 +44,7 @@ namespace Lab_4
             // 
             this.buttonGet.BackColor = System.Drawing.Color.PaleGreen;
             this.buttonGet.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonGet.Location = new System.Drawing.Point(282, 207);
+            this.buttonGet.Location = new System.Drawing.Point(288, 205);
             this.buttonGet.Name = "buttonGet";
             this.buttonGet.Size = new System.Drawing.Size(103, 76);
             this.buttonGet.TabIndex = 0;

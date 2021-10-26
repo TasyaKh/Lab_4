@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab_4
 {
-    class Laptop : Technique            //Класс ноутбуков, наследует класс техника
+    public class Laptop : Technique            //Класс ноутбуков, наследует класс техника
     {
         private bool backlightKeyboard; //С подстветкой клавиатура или нет
         private byte numberCores;       //Число ядер
@@ -28,6 +24,14 @@ namespace Lab_4
             str += String.Format("\nЖесткий диск: " + spaceHardDrive + " гб.");
 
             return str;
+        }
+        public byte getNumberCores()
+        {
+            return numberCores;
+        }
+        public int getSpaceHardDrive()
+        {
+            return spaceHardDrive;
         }
     }
 }

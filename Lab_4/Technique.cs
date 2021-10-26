@@ -16,5 +16,9 @@ namespace Lab_4
                 var str = "\nРазмер экрана: " + sizeOfDispl + " дюйм";                 //Сформировтвать сообщение о размере экрана
                 return str;                                                            //Вывести сформированное сообщение
             }
-        }  
+        public String getSizeOfDisplay()
+        {
+            return sizeOfDispl;
+        }
+    }  
 }
