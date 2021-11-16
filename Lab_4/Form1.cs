@@ -20,14 +20,8 @@ namespace Lab_4
             showInfo();                                   //Показать начальную информацию об утсройствах
         }
 
-        private void showPicture(bool showPic)            //Вывест и картинку об утсройстве на экран
-        {
-            if (!showPic)                                 //Елсли не разрешен показ картинки
-            {
-                pictureBox1.Image = null;                 //То бокс, содержащий картинку опустошаем
-                return;
-            }
-
+        private void showPicture()            //Вывест и картинку об утсройстве на экран
+        {         
             var tech = techList[0];                       //Получить первый элемент очереди
             if(tech is Laptop)                            //Просматриваем все элементы и в соответствии с найденным элементов выводим картинку
             { 
@@ -48,7 +42,7 @@ namespace Lab_4
             int count = 0;       //Номер взятого элемента
 
             int laptopCount = 0; //Подсчитывает количество ноутбуков
-            int tabletCount = 0; //Кодличество планшетов
+            int tabletCount = 0; //Количество планшетов
             int phoneCount = 0;   //Количество телефонов
 
             foreach (var tech in this.techList) //Смотрим весь лист с устройствами
@@ -93,8 +87,7 @@ namespace Lab_4
             txtOut.Text = "Welcome!";
             techList.Clear();                                 //Очищаем массив с элементами
 
-            var rnd = new Random();                           //Нужен для получения случайных чисел, стобы заполнить автомат утсройствами
-
+            var rnd = new Random();                           //Нужен для получения случайных чисел, чтобы заполнить автомат устройствами
             for (int i = 0; i < 10; i++)                      //Всего устройств будет 10 штук
             {
                 switch (rnd.Next() % 3)                       //3ри устройства
@@ -111,7 +104,7 @@ namespace Lab_4
                 }
             }
             showInfo();                              //Показать информацию о девайсе
-            showPicture(false);                      //Показать изображение для девайса
+            pictureBox1.Image = null;                       //Показать изображение для девайса
         }
 
         private void buttonGet_Click(object sender, EventArgs e) //Получтть элемент по нажатию кнопки "получить"
@@ -121,7 +114,7 @@ namespace Lab_4
             if(techList.Count == 0)                              //Если девайсы закончились
             {
                 txtOut.Text = "Денег нет!";
-                showPicture(false);                              //Показать изображение для девайса
+                pictureBox1.Image = null;                              //Показать изображение для девайса
                 return;
             }
             Technique tech = this.techList[0];
@@ -135,7 +128,7 @@ namespace Lab_4
 
           
            
-            showPicture(true);               //Показать изображение для девайса
+            showPicture();                   //Показать изображение для девайса
             this.techList.RemoveAt(0);       //Удаляем вытащенный элемент
             showInfo();                      //Показываем измененную информацию о количестве девайсов
 
